@@ -1,7 +1,7 @@
 django-paginator
 ================
 
-A simple paginator tag and util
+A simple paginator tag and utils
 
 Installation
 ------------
@@ -39,7 +39,7 @@ Usages
             return direct_to_template(request, 'example.html',
                     {'object_list': object_list, 'paginator': paginator})
 
-    example.html
+   example.html
 
         {% paginator_nav paginator %}
         <ul>
