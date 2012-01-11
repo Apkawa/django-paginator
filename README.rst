@@ -16,7 +16,7 @@ Usages
 #. In template
    example::
 
-        {% load paginator %}
+        {% load paginator_tag %}
         {% paginate object_list %}
         {% paginator_nav %}
         <ul>
@@ -42,6 +42,7 @@ Usages
 
    example.html::
 
+        {% load paginator_tag %}
         {% paginator_nav paginator %}
         <ul>
         {% for obj in object_list %}
@@ -49,6 +50,20 @@ Usages
         {% endfor %}
         </ul>
         {% paginator_nav paginator%}
+
+
+Template tags
+-------------
+* ``paginate`` - for paginate objetct list::
+
+    {% paginate object_list [per_page] [as paginator] %}
+
+* ``paginator_nav`` - build navigation page::
+
+    {% paginator_nav [paginator] %}
+
+
+template for paginator_nav in ``paginator/paginator_tag.html``
 
 
 Tests

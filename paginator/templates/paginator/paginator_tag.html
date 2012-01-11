@@ -1,4 +1,4 @@
-{% load paginator %}
+{% load paginator_tag %}
 <div class="paginator">
     {% if paginator.has_previous %}
         <a class="paginate" href="{% get_append "page" paginator.previous_page_number %}">{{ "<<<" }}</a>

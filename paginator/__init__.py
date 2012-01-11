@@ -1,1 +1,1 @@
-from templatetags.paginator import paginate
+from utils import paginate

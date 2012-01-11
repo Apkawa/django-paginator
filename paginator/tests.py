@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.utils import unittest
+from paginator.utils import get_format_page_range
 
 
 class PaginatorTest(unittest.TestCase):
@@ -18,7 +19,6 @@ class PaginatorTest(unittest.TestCase):
             ]
 
     def test_simple(self):
-        from templatetags.paginator import get_format_page_range
         for num_page, pages_range, result in self.cases:
             test_result = get_format_page_range(num_page, pages_range)
             assert(test_result == result, "%s != %s (%s)" % (test_result, result, num_page))
