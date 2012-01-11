@@ -6,8 +6,9 @@ A simple paginator tag and utils
 Installation
 ------------
 
-# Add the `paginator` directory to your Python path.
-# Add `'django.core.context_processors.request'` in `settings.TEMPLATE_CONTEXT_PROCESSORS`
+#. Add the ``paginator`` directory to your Python path.
+#. Add the ``'paginator'`` directory in ``settings.INSTALLED_APPS``.
+#. Add ``'django.core.context_processors.request'`` in ``settings.TEMPLATE_CONTEXT_PROCESSORS``
 
 Usages
 ------
@@ -48,3 +49,10 @@ Usages
         {% endfor %}
         </ul>
         {% paginator_nav paginator%}
+
+
+Tests
+-----
+Do run tests::
+
+    python2 manage.py test paginator
