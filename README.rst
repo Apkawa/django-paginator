@@ -13,7 +13,7 @@ Usages
 ------
 
 #. In template
-   example
+   example::
 
         {% load paginator %}
         {% paginate object_list %}
@@ -27,7 +27,7 @@ Usages
 
 #. In views
 
-   views.py
+   views.py::
 
         from django.views.generic.simple import direct_to_template
         from paginator import paginate
@@ -39,7 +39,7 @@ Usages
             return direct_to_template(request, 'example.html',
                     {'object_list': object_list, 'paginator': paginator})
 
-   example.html
+   example.html::
 
         {% paginator_nav paginator %}
         <ul>
