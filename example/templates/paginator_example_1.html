@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% load paginator %}
+{% block content %}
+    {% paginate object_list %}
+    {% paginator_nav %}
+    <ul>
+    {% for obj in object_list %}
+        <li>{{ obj }}</li>
+    {% endfor %}
+    </ul>
+    {% paginator_nav %}
+
+{% endblock content %}

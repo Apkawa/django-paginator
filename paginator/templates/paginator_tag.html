@@ -1,0 +1,29 @@
+{% load paginator %}
+<div class="paginator">
+    {% if paginator.has_previous %}
+        <a class="paginate" href="{% get_append "page" paginator.previous_page_number %}">{{ "<<<" }}</a>
+    {% endif %}
+    {% for page in format_range %}
+    {% if page %}
+        {% if page == paginator.number %}
+        <b>{{ page }}</b>
+        {% else %}
+            <a class="paginate" href="{% get_append "page" page %}">{{ page }}</a>
+        {% endif %}
+    {% else %}
+        ...
+    {% endif %}
+    {% endfor %}
+    {% if paginator.has_next %}
+        <a class="paginate" href="{% get_append "page" paginator.next_page_number %}">{{ ">>>" }}</a>
+    {% endif %}
+    <form method="get" action=".">
+        {% for name, value in request.GET.iteritems %}
+            {% if name != "per_page" %}
+                <input type="hidden" name="{{ name }}" value="{{ value }}"/>
+            {% endif %}
+        {% endfor %}
+        {{ per_page_form.per_page }}
+        <button type="submit">OK</button>
+    </form>
+</div>
